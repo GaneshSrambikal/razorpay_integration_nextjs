@@ -1,4 +1,5 @@
 'use client'
+//@ts-nocheck
 import React, { useState } from 'react'
 import { useToast } from '@/components/ui/use-toast'
 
@@ -64,9 +65,9 @@ const ProductCard = () => {
             },
 
         }
-        // eslint-disable-next-line no-undef
-        // @ts-ignore
-        const rzp1: Razorpay = new Razorpay(option)
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-ignore
+        const rzp1 = new Razorpay(option)
         rzp1.on('payment failed', function (res: any) {
             alert(res.error.code)
         })
