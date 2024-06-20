@@ -15,6 +15,7 @@ npm run dev
   <li> ⚙️ For KEY_ID and KEY_SECRET sign up at https://razorpay.com</li>
 </ol>
 
+<img src='/client/assets/showcase-razorpay.png'>
 
 **Packages used**
 - [razorpay](https://www.npmjs.com/package/razorpay)
