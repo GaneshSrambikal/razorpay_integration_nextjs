@@ -48,7 +48,7 @@ const ProductCard = () => {
                 console.log('Order Paid');
                 toast({
                     title: 'Order Successful',
-                    description: `You have purchase FLIGHT Jacket Green for Rs.${new Intl.NumberFormat().format(Number(amount / 100))} on ${new Date().toDateString()}`
+                    description: `You have purchased FLIGHT Jacket Green for Rs.${new Intl.NumberFormat().format(Number(amount / 100))} on ${new Date().toDateString()}`
                 })
 
 
