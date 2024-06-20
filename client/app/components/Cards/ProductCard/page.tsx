@@ -65,6 +65,7 @@ const ProductCard = () => {
 
         }
         // eslint-disable-next-line no-undef
+        // @ts-ignore
         const rzp1: Razorpay = new Razorpay(option)
         rzp1.on('payment failed', function (res: any) {
             alert(res.error.code)
