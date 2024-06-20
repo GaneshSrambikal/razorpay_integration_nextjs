@@ -11,7 +11,7 @@ const ProductCard = () => {
         e.preventDefault();
         const currency: string = 'INR';
         const receiptId: string = '123456789';
-        const orders = await fetch('http://localhost:5000/orders', {
+        const orders = await fetch(`${process.env.BASE_URL}/orders`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -36,7 +36,7 @@ const ProductCard = () => {
                 console.log(res)
                 const body = { ...res }
 
-                const validate = await fetch('http://localhost:5000/validate', {
+                const validate = await fetch(`${process.env.BASE_URL}/validate`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
