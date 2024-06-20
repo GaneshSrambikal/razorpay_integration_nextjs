@@ -5,13 +5,15 @@ import { useToast } from '@/components/ui/use-toast'
 
 type MouseEvent = React.MouseEvent<HTMLButtonElement>
 const ProductCard = () => {
+    const BASE_URL = process.env.NODE_ENV === 'development'  ? 'http://localhost:5000' : 'https://razorpay-integration-nextjs-server.vercel.app' 
+    console.log(BASE_URL)
     const [amount, setAmount] = useState(259900)
     const { toast } = useToast()
     const handlePayment = async (e: MouseEvent) => {
         e.preventDefault();
         const currency: string = 'INR';
         const receiptId: string = '123456789';
-        const orders = await fetch(`http://localhost:5000/orders`, {
+        const orders = await fetch(`${BASE_URL}/orders`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -36,7 +38,7 @@ const ProductCard = () => {
                 console.log(res)
                 const body = { ...res }
 
-                const validate = await fetch(`http://localhost:5000/validate`, {
+                const validate = await fetch(`${BASE_URL}/validate`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
