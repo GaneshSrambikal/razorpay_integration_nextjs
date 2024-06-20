@@ -4,6 +4,7 @@
 <img height="100" src="https://static-00.iconduck.com/assets.00/nextjs-icon-2048x1234-pqycciiu.png">
 </div>
 <h1>This Repo demonstrates the web integration of RazorPay Payment Gateway with Nextjs</h1>
+<img src='/client/assets/showcase-razorpay.png'>
 <ol align="left">
   <li> 🔗 Clone/fork the repo</li>
   <li>📦 Install and Run the client and server</li>
@@ -15,7 +16,6 @@ npm run dev
   <li> ⚙️ For KEY_ID and KEY_SECRET sign up at https://razorpay.com</li>
 </ol>
 
-<img src='/client/assets/showcase-razorpay.png'>
 
 **Packages used**
 - [razorpay](https://www.npmjs.com/package/razorpay)
