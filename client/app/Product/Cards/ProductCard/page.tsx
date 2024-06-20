@@ -47,7 +47,7 @@ const ProductCard = () => {
                 const jsonRes = await validate.json()
                 console.log('Order Paid');
                 toast({
-                    title: 'Order Successful',
+                    title: 'Order Placed Successfully!.',
                     description: `You have purchased FLIGHT Jacket Green for Rs.${new Intl.NumberFormat().format(Number(amount / 100))} on ${new Date().toDateString()}`
                 })
 

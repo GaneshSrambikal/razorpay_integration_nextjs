@@ -1,8 +1,8 @@
 'use client'
 import { useState } from "react";
-import ProductCard from "./components/Cards/ProductCard/page";
+import ProductCard from "./Product/Cards/ProductCard/page";
 import { Toaster } from "@/components/ui/toaster";
-import Banner from "./components/Banner";
+import Banner from "./Product/Banner";
 
 export default function Home() {
 
