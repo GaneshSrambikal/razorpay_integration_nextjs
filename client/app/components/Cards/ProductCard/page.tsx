@@ -5,8 +5,7 @@ import { useToast } from '@/components/ui/use-toast'
 
 type MouseEvent = React.MouseEvent<HTMLButtonElement>
 const ProductCard = () => {
-    const BASE_URL = process.env.NODE_ENV === 'development'  ? 'http://localhost:5000' : 'https://razorpay-integration-nextjs-server.vercel.app' 
-    console.log(BASE_URL)
+    const BASE_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : 'https://razorpay-integration-nextjs-server.vercel.app'
     const [amount, setAmount] = useState(259900)
     const { toast } = useToast()
     const handlePayment = async (e: MouseEvent) => {
@@ -25,7 +24,7 @@ const ProductCard = () => {
             })
         })
         const response = await orders.json()
-        console.log(response)
+        console.log('Payment Authorized')
         const option: object = {
             key: '',
             amount,
@@ -35,7 +34,7 @@ const ProductCard = () => {
             image: '',
             order_id: response.id,
             handler: async function (res: any) {
-                console.log(res)
+                console.log('Payment Captured')
                 const body = { ...res }
 
                 const validate = await fetch(`${BASE_URL}/validate`, {
@@ -46,10 +45,10 @@ const ProductCard = () => {
                     body: JSON.stringify(body)
                 })
                 const jsonRes = await validate.json()
-                console.log(jsonRes);
+                console.log('Order Paid');
                 toast({
                     title: 'Order Successful',
-                    description: `You have purchase Flight jacket Rs.${new Intl.NumberFormat().format(Number(amount / 100))}`
+                    description: `You have purchase FLIGHT Jacket Green for Rs.${new Intl.NumberFormat().format(Number(amount / 100))} on ${new Date().toDateString()}`
                 })
 
 
@@ -80,7 +79,7 @@ const ProductCard = () => {
 
 
             <div>
-                <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto py-12 px-4 bg-white rounded-lg border-black border">
+                <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto py-12 px-4 bg-white rounded-lg border-black border-0">
                     <div>
                         <img
                             src="https://image-cdn.hypb.st/https%3A%2F%2Fs3.store.hypebeast.com%2Fmedia%2Fimage%2Fe5%2F7f%2Fjacket-5-1-d1cb5.jpg?fit=max&w=720&q=90"
@@ -113,7 +112,7 @@ const ProductCard = () => {
                 </div>
             </div>
 
-           
+
         </>
     )
 }
