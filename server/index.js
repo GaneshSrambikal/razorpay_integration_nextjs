@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 // Allow specific origin(s) Only When production has such issue
 // app.use(cors({
-//   origin: 'https://yourdeployedsite.com'
+//   origin: 'https://razorpay-integration-nextjs-server.vercel.app/'
 // }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
